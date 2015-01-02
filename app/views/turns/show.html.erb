@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Aircraft:</strong>
+  <%= @turn.aircraft %>
+</p>
+
+<p>
+  <strong>Arrival:</strong>
+  <%= @turn.arrival %>
+</p>
+
+<p>
+  <strong>Departure:</strong>
+  <%= @turn.departure %>
+</p>
+
+<p>
+  <strong>Gate:</strong>
+  <%= @turn.gate %>
+</p>
+
+<%= link_to 'Edit', edit_turn_path(@turn) %> |
+<%= link_to 'Back', turns_path %>

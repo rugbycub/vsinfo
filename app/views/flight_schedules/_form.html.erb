@@ -1,0 +1,61 @@
+<%= form_for(@flight_schedule) do |f| %>
+  <% if @flight_schedule.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@flight_schedule.errors.count, "error") %> prohibited this flight_schedule from being saved:</h2>
+
+      <ul>
+      <% @flight_schedule.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :departure %><br>
+    <%= f.time_select :departure %>
+  </div>
+  <div class="field">
+    <%= f.label :arrival %><br>
+    <%= f.time_select :arrival %>
+  </div>
+  <div class="field">
+    <%= f.label :monday %><br>
+    <%= f.check_box :monday %>
+  </div>
+  <div class="field">
+    <%= f.label :tuesday %><br>
+    <%= f.check_box :tuesday %>
+  </div>
+  <div class="field">
+    <%= f.label :wednesday %><br>
+    <%= f.check_box :wednesday %>
+  </div>
+  <div class="field">
+    <%= f.label :thursday %><br>
+    <%= f.check_box :thursday %>
+  </div>
+  <div class="field">
+    <%= f.label :friday %><br>
+    <%= f.check_box :friday %>
+  </div>
+  <div class="field">
+    <%= f.label :saturday %><br>
+    <%= f.check_box :saturday %>
+  </div>
+  <div class="field">
+    <%= f.label :sunday %><br>
+    <%= f.check_box :sunday %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date %><br>
+    <%= f.date_select :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date %><br>
+    <%= f.date_select :end_date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

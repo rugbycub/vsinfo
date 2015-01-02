@@ -1,0 +1,57 @@
+<%= form_for(@arrival) do |f| %>
+  <% if @arrival.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@arrival.errors.count, "error") %> prohibited this arrival from being saved:</h2>
+
+      <ul>
+      <% @arrival.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :flight_number %><br>
+    <%= f.text_field :flight_number %>
+  </div>
+  <div class="field">
+    <%= f.label :sta %><br>
+    <%= f.time_select :sta %>
+  </div>
+  <div class="field">
+    <%= f.label :eta %><br>
+    <%= f.time_select :eta %>
+  </div>
+  <div class="field">
+    <%= f.label :captain %><br>
+    <%= f.text_field :captain %>
+  </div>
+  <div class="field">
+    <%= f.label :fsm %><br>
+    <%= f.text_field :fsm %>
+  </div>
+  <div class="field">
+    <%= f.label :j_booked %><br>
+    <%= f.text_field :j_booked %>
+  </div>
+  <div class="field">
+    <%= f.label :w_booked %><br>
+    <%= f.text_field :w_booked %>
+  </div>
+  <div class="field">
+    <%= f.label :y_booked %><br>
+    <%= f.text_field :y_booked %>
+  </div>
+  <div class="field">
+    <%= f.label :total_booked %><br>
+    <%= f.text_field :total_booked %>
+  </div>
+  <div class="field">
+    <%= f.label :specials %><br>
+    <%= f.text_area :specials %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

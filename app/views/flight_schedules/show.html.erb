@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Departure:</strong>
+  <%= @flight_schedule.departure %>
+</p>
+
+<p>
+  <strong>Arrival:</strong>
+  <%= @flight_schedule.arrival %>
+</p>
+
+<p>
+  <strong>Monday:</strong>
+  <%= @flight_schedule.monday %>
+</p>
+
+<p>
+  <strong>Tuesday:</strong>
+  <%= @flight_schedule.tuesday %>
+</p>
+
+<p>
+  <strong>Wednesday:</strong>
+  <%= @flight_schedule.wednesday %>
+</p>
+
+<p>
+  <strong>Thursday:</strong>
+  <%= @flight_schedule.thursday %>
+</p>
+
+<p>
+  <strong>Friday:</strong>
+  <%= @flight_schedule.friday %>
+</p>
+
+<p>
+  <strong>Saturday:</strong>
+  <%= @flight_schedule.saturday %>
+</p>
+
+<p>
+  <strong>Sunday:</strong>
+  <%= @flight_schedule.sunday %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @flight_schedule.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @flight_schedule.end_date %>
+</p>
+
+<%= link_to 'Edit', edit_flight_schedule_path(@flight_schedule) %> |
+<%= link_to 'Back', flight_schedules_path %>

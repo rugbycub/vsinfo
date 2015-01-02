@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Flight number:</strong>
+  <%= @arrival.flight_number %>
+</p>
+
+<p>
+  <strong>Sta:</strong>
+  <%= @arrival.sta %>
+</p>
+
+<p>
+  <strong>Eta:</strong>
+  <%= @arrival.eta %>
+</p>
+
+<p>
+  <strong>Captain:</strong>
+  <%= @arrival.captain %>
+</p>
+
+<p>
+  <strong>Fsm:</strong>
+  <%= @arrival.fsm %>
+</p>
+
+<p>
+  <strong>J booked:</strong>
+  <%= @arrival.j_booked %>
+</p>
+
+<p>
+  <strong>W booked:</strong>
+  <%= @arrival.w_booked %>
+</p>
+
+<p>
+  <strong>Y booked:</strong>
+  <%= @arrival.y_booked %>
+</p>
+
+<p>
+  <strong>Total booked:</strong>
+  <%= @arrival.total_booked %>
+</p>
+
+<p>
+  <strong>Specials:</strong>
+  <%= @arrival.specials %>
+</p>
+
+<%= link_to 'Edit', edit_arrival_path(@arrival) %> |
+<%= link_to 'Back', arrivals_path %>

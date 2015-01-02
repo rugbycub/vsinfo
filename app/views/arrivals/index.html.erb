@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Arrivals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Flight number</th>
+      <th>Sta</th>
+      <th>Eta</th>
+      <th>Captain</th>
+      <th>Fsm</th>
+      <th>J booked</th>
+      <th>W booked</th>
+      <th>Y booked</th>
+      <th>Total booked</th>
+      <th>Specials</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @arrivals.each do |arrival| %>
+      <tr>
+        <td><%= arrival.flight_number %></td>
+        <td><%= arrival.sta %></td>
+        <td><%= arrival.eta %></td>
+        <td><%= arrival.captain %></td>
+        <td><%= arrival.fsm %></td>
+        <td><%= arrival.j_booked %></td>
+        <td><%= arrival.w_booked %></td>
+        <td><%= arrival.y_booked %></td>
+        <td><%= arrival.total_booked %></td>
+        <td><%= arrival.specials %></td>
+        <td><%= link_to 'Show', arrival %></td>
+        <td><%= link_to 'Edit', edit_arrival_path(arrival) %></td>
+        <td><%= link_to 'Destroy', arrival, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Arrival', new_arrival_path %>

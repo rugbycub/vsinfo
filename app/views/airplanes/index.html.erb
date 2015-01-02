@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Airplanes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Reg</th>
+      <th>Ac type</th>
+      <th>Name</th>
+      <th>J capacity</th>
+      <th>W capacity</th>
+      <th>Y capacity</th>
+      <th>Total capacity</th>
+      <th>Ife</th>
+      <th>New livery</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @airplanes.each do |airplane| %>
+      <tr>
+        <td><%= airplane.reg %></td>
+        <td><%= airplane.ac_type %></td>
+        <td><%= airplane.name %></td>
+        <td><%= airplane.j_capacity %></td>
+        <td><%= airplane.w_capacity %></td>
+        <td><%= airplane.y_capacity %></td>
+        <td><%= airplane.total_capacity %></td>
+        <td><%= airplane.ife %></td>
+        <td><%= airplane.new_livery %></td>
+        <td><%= link_to 'Show', airplane %></td>
+        <td><%= link_to 'Edit', edit_airplane_path(airplane) %></td>
+        <td><%= link_to 'Destroy', airplane, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Airplane', new_airplane_path %>

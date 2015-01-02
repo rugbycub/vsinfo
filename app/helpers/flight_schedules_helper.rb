@@ -1,0 +1,2 @@
+module FlightSchedulesHelper
+end

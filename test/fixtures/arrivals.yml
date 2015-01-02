@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  flight_number: MyString
+  sta: 2014-12-25 14:08:57
+  eta: 2014-12-25 14:08:57
+  captain: MyString
+  fsm: MyString
+  j_booked: 
+  w_booked: 
+  y_booked: 
+  total_booked: 
+  specials: MyText
+
+two:
+  flight_number: MyString
+  sta: 2014-12-25 14:08:57
+  eta: 2014-12-25 14:08:57
+  captain: MyString
+  fsm: MyString
+  j_booked: 
+  w_booked: 
+  y_booked: 
+  total_booked: 
+  specials: MyText

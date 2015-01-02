@@ -1,0 +1,2 @@
+module AdhocCancellationsHelper
+end

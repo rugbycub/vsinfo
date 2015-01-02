@@ -1,0 +1,21 @@
+<%= form_for(@adhoc_cancellation) do |f| %>
+  <% if @adhoc_cancellation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@adhoc_cancellation.errors.count, "error") %> prohibited this adhoc_cancellation from being saved:</h2>
+
+      <ul>
+      <% @adhoc_cancellation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

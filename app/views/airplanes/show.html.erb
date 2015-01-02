@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Reg:</strong>
+  <%= @airplane.reg %>
+</p>
+
+<p>
+  <strong>Ac type:</strong>
+  <%= @airplane.ac_type %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @airplane.name %>
+</p>
+
+<p>
+  <strong>J capacity:</strong>
+  <%= @airplane.j_capacity %>
+</p>
+
+<p>
+  <strong>W capacity:</strong>
+  <%= @airplane.w_capacity %>
+</p>
+
+<p>
+  <strong>Y capacity:</strong>
+  <%= @airplane.y_capacity %>
+</p>
+
+<p>
+  <strong>Total capacity:</strong>
+  <%= @airplane.total_capacity %>
+</p>
+
+<p>
+  <strong>Ife:</strong>
+  <%= @airplane.ife %>
+</p>
+
+<p>
+  <strong>New livery:</strong>
+  <%= @airplane.new_livery %>
+</p>
+
+<%= link_to 'Edit', edit_airplane_path(@airplane) %> |
+<%= link_to 'Back', airplanes_path %>

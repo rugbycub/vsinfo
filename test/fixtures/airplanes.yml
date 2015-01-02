@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reg: 
+  ac_type: MyString
+  name: MyString
+  j_capacity: 
+  w_capacity: 
+  y_capacity: 
+  total_capacity: 
+  ife: MyString
+  new_livery: false
+
+two:
+  reg: 
+  ac_type: MyString
+  name: MyString
+  j_capacity: 
+  w_capacity: 
+  y_capacity: 
+  total_capacity: 
+  ife: MyString
+  new_livery: false
