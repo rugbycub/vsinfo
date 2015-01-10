@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :positions
+
   resources :operations
 
   resources :adhoc_cancellations

@@ -1,3 +1,4 @@
 class Airport < ActiveRecord::Base
-	has_many :operations
+	self.primary_key = 'code'
+	has_many :operations, primary_key: "code"
 end

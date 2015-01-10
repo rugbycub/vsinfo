@@ -1,5 +1,6 @@
 class Arrival < ActiveRecord::Base
-	belongs_to :flight
+	belongs_to :flight, class_name: "Flight",
+						foreign_key: "flight_number"
 	has_one :turn
 	before_save :add_cabin
 	before_update :add_cabin
