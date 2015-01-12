@@ -1,0 +1,71 @@
+<script type='text/javascript'>
+$(function() {
+  Dashing.gridsterLayout('[{"col":1,"row":1},{"col":1,"row":7},{"col":13,"row":2},{"col":5,"row":1},{"col":9,"row":1},{"col":5,"row":3},{"col":9,"row":3},{"col":5,"row":6},{"col":9,"row":6},{"col":5,"row":10},{"col":9,"row":10},{"col":1,"row":9},{"col":1,"row":3},{"col":4,"row":11},{"col":3,"row":9},{"col":13,"row":1}]')
+});
+</script>
+
+<% content_for :title do %><%= params[:name] %><% end %>
+
+<div class="gridster">
+  <ul>
+    <li data-row="1" data-col="1" data-sizex="4" data-sizey="2">
+      <div data-view="Clock" data-city="Los Angeles" data-image="/logo.png"></div>
+    </li>
+    <li data-row="2" data-col="1" data-sizex="4" data-sizey="2">
+      <div data-id="google_calendar_charlie" data-view="GoogleCalendar"></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="7">
+      <div data-id="positions_<%= params[:name] %>" data-view="Positions" data-supervisor="Elaine" data-tco="Rowena" data-fmu="Christina" data-ticketer_1="Lanie" data-ticketer_2="Mary" data-baggage="Laura T" data-vx_lounge="Mika" data-ac_lounge="Annie" data-arrival_lead="Diana" data-curb="Tasneem" data-gate_lead="Wendy" data-j_cls_1="Eduardo" data-j_cls_2="Sergei" data-w_cls="Arfa" data-y_cls_1="Nancy" data-y_cls_2="Susie" data-lobby="Muhammad" data-bag_drop="Fabio" data-clubhouse_1="test" data-clubhouse_2="test2" ></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="4" data-sizey="2">
+      <div data-id="flifo_0_<%= params[:name] %>" data-view="Flifo" data-inbound_flight_number="VS 007" data-outbound_flight_number="VS 008" data-registration="G-VNAP" data-aircraft_type="A340-600"></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="4" data-sizey="2">
+      <div data-id="flifo_1_<%= params[:name] %>" data-view="Flifo" data-inbound_flight_number="VS 023" data-outbound_flight_number="VS 024" data-registration="G-VNEW" data-aircraft_type="B787-9"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="4" data-sizey="3">
+      <div data-id="arrival_0_<%= params[:name] %>" data-view="Arrival" data-inbound_flight_number="VS 007" data-sta="14:35" data-eta="14:35"></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="4" data-sizey="3">
+      <div data-id="arrival_1_<%= params[:name] %>" data-view="Arrival" data-inbound_flight_number="VS 023" data-sta="18:55" data-eta="18:55"></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="4" data-sizey="4">
+      <div data-id="departure_0_<%= params[:name] %>" data-view="Departure2" data-outbound_flight_number="vs 008" data-std="17:01" data-etd="17:01"></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="4" data-sizey="4">
+      <div data-id="departure_1_<%= params[:name] %>" data-view="Departure2"></div>
+      <!-- <div data-id="departure2" data-view="Departure" data-outbound_flight_number="VS 024" data-std="21:15" data-etd="21:15"></div> -->
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="4" data-sizey="1">
+      <div data-id="notes_0_<%= params[:name] %>" data-view="Notes" data-notes_content="Seats 8A and 7K Inop - NO IFE"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="4" data-sizey="1">
+      <div data-id="notes_1_<%= params[:name] %>" data-view="Notes" data-notes_content="Seats 8A and 7K Inop - NO IFE"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
+      <div data-id="twitter_mentions" data-view="Comments" ></div>
+      <i class="icon-twitter icon-background"></i>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="4" data-sizey="4">
+      <div data-id="flickr_public_<%= params[:name] %>" data-view="Flickr" data-moreinfo="My public photos"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="klimato_<%= params[:name] %>" data-view="Klimato"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
+      <div data-id="forecast_<%= params[:name] %>" data-view="Forecast" data-title="Weather Forecast" ></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="logo_<%= params[:name] %>" data-view="Logo" ></div>
+    </li>
+
+  </ul>
+  <div data-id="ticker_<%= params[:name] %>" data-view="Ticker" style="display: none;" ></div>
+</div>

@@ -36,6 +36,11 @@ class OperationsController < ApplicationController
     respond_with(@operation)
   end
 
+  def determine_turns
+    @turn = @operation.turns.new
+    @turn.save
+  end
+
   private
     def set_operation
       @operation = Operation.find(params[:id])

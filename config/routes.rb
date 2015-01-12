@@ -1,23 +1,15 @@
 Rails.application.routes.draw do
-  resources :positions
-
-  resources :operations
-
-  resources :adhoc_cancellations
-
-  resources :flights
-
-  resources :flight_schedules
-
-  resources :airports
-
-  resources :turns
-
-  resources :arrivals
-
-  resources :airplanes
-
-  resources :departures
+  resources :airports do
+    resources :positions
+    resources :operations
+    resources :adhoc_cancellations
+    resources :flights
+    resources :flight_schedules
+    resources :turns
+    resources :arrivals
+    resources :airplanes
+    resources :departures
+  end
 
   mount Dashing::Engine, at: Dashing.config.engine_path
   # The priority is based upon order of creation: first created -> highest priority.

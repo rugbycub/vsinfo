@@ -119,7 +119,7 @@ ActiveRecord::Schema.define(version: 20150104222244) do
   add_index "flights", ["flight_number"], name: "index_flights_on_flight_number", unique: true, using: :btree
 
   create_table "operations", force: true do |t|
-    t.string   "city"
+    t.string   "airport_id"
     t.date     "date"
     t.integer  "staff_assignment"
     t.datetime "created_at",       null: false

@@ -1,7 +1,7 @@
 class CreateOperations < ActiveRecord::Migration
   def change
     create_table :operations do |t|
-      t.string :city
+      t.string :airport_id
       t.date :date
       t.integer :staff_assignment
 

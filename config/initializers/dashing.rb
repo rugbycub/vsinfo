@@ -36,7 +36,7 @@ Dashing.configure do |config|
 
   # Engine path to use for accessing engine's routes.
   # Ex: http://your_app/dashing/dashboard/my_dashboard_name
-  # config.engine_path = '/dashing'
+  #config.engine_path = '/dashing'
 
   # The dashboards views path used to find dashboards.
   # config.dashboards_views_path = -> { Rails.root.join('app', 'views', 'dashing', 'dashboards') }
@@ -45,7 +45,7 @@ Dashing.configure do |config|
   # config.dashboard_layout_path = 'dashing/dashboard'
 
   # Default dashboard name to load when going to /dashing/dashboards
-  # config.default_dashboard = nil
+   config.default_dashboard = "sample"
 
   # A secure random string to authenticate with for curl requests.
   # Put nil if you don't want to use authentication.
