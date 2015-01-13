@@ -10,7 +10,7 @@ require 'open-uri'
 #   hangouts: "https://www.google.com/calendar/ical/<hash>.calendar.google.com/private-<hash>/hangouts.ics"
 calendars = {charlie: "https://www.google.com/calendar/ical/charlie%40charlienuttall.com/public/basic.ics"}
  
-Dashing.scheduler.every '5m', first_in: 1.second.since do |job|
+Dashing.scheduler.every '5m', first_in: 1.second.since, allow_overlapping: false do |job|
  
   calendars.each do |cal_name, cal_uri|
  

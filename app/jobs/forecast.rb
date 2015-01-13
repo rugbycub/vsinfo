@@ -1,7 +1,7 @@
 require 'net/http'
 require 'uri'
 require 'json'
-Dashing.scheduler.every '5m', first_in: 1.second.since do |job|
+Dashing.scheduler.every '5m', first_in: 1.second.since, allow_overlapping: false do |job|
   world_weather_online_api_key = '47aa8276c4916918828a0516f7f8c' # your api key here
   zip_code = "90045"                # your zip code here
   uri = URI.parse(

@@ -12,7 +12,7 @@ end
 
 search_term = URI::encode('virginatlantic')
 
-Dashing.scheduler.every '10m', first_in: 1.second.since do |job|
+Dashing.scheduler.every '10m', first_in: 1.second.since, allow_overlapping: false do |job|
   begin
     tweets = twitter.user_timeline('virginatlantic')#, :exclude_replies => true)
 
