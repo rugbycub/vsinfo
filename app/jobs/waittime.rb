@@ -93,3 +93,56 @@
 #   end
 #     sleep(30/output.size)
 # end
+city = "LAX"
+@airport = Airport.find(city)
+date = "4/10/2015".to_date
+@operation = @airport.operations.new(date: date)
+departure_list = []
+departure_schedule = []
+arrival_list = []
+arrival_schedule = []
+turns_arr = []
+ac_list_arr = []
+
+Flight.where(origin: @airport.code).each do |x|
+  FlightSchedule.where(flight_number: x).where("start_date < ? AND end_date > ?", date, date).each do |departure|
+    departure_list.push(x)
+    departure_schedule.push(departure)
+  end
+end
+
+Flight.where(destination: @airport.code).each do |x|
+  FlightSchedule.where(flight_number: x).where("start_date < ? AND end_date > ?", date, date).each do |arrival| 
+    arrival_list.push(x)
+    arrival_schedule.push(arrival)
+  end
+end
+
+arrival_schedule.each do |arrival|
+  plane_list = Airplane.where(ac_type: arrival.ac_type)
+  ac_list_arr.push(plane_list)
+end
+
+arrival_list.count.times do |x|
+  turn_item = Hash.new
+  turn_item["departure"] = departure_list[x]
+  turn_item["departure_sked"] = departure_schedule[x]
+  turn_item["arrival"] = arrival_list[x]
+  turn_item["arrival_sked"] = arrival_schedule[x],
+  turn_item["aircraft_options"] = ac_list_arr[x]
+  turns_arr.push(turn_item)
+end
+
+turns_arr.each do |x|
+  @turn = @operation.turns.new
+  @turn.airport = @operation.airport
+  @turn.save
+  @departure = (@turn.departure = Departure.new)
+  @arrival = (@turn.arrival = Arrival.new)
+  @departure.flight = x['departure']
+  @arival.flight = x['arrival']
+  @departure.save
+  @arrival.save
+end
+  
+  
