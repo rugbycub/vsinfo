@@ -3,9 +3,9 @@
 Dashing.scheduler.every '5m', first_in: 1.second.since, allow_overlapping: false do |job|
   departure = Departure.first
   j_booked_percentage = (departure.j_booked / (departure.j_capacity * 1.25) * 100)
-  w_booked_percentage: (departure.w_booked / (departure.w_capacity * 1.25) * 100)
-  y_booked_percentage: (departure.y_booked / (departure.y_capacity * 1.25) * 100)
-  total_booked_percentage: (departure.total_booked / (departure.total_capacity * 1.25) * 100)
+  w_booked_percentage = (departure.w_booked / (departure.w_capacity * 1.25) * 100)
+  y_booked_percentage = (departure.y_booked / (departure.y_capacity * 1.25) * 100)
+  total_booked_percentage = (departure.total_booked / (departure.total_capacity * 1.25) * 100)
   
   Dashing.send_event "departure2", {
     j_capacity: departure.j_capacity,
