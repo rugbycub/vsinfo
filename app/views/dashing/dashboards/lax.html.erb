@@ -1,11 +1,11 @@
 <script type='text/javascript'>
 $(function() {
-  Dashing.widget_base_dimensions = [370, 340]
-  Dashing.numColumns = 5
-  Dashing.cycleDashboards({timeInSeconds: 15, stagger: true});
+  Dashing.cycleDashboards({timeInSeconds: 15, stagger: false});
 });
 </script>
 
 <%= render "dual_flight" %>
 
 <%= render "kpi" %>
+
+  <div data-id="ticker_<%= params[:name] %>" data-view="Ticker" style="display: none;" ></div>

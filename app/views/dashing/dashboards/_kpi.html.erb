@@ -1,12 +1,10 @@
 
-<% content_for :title do %><%= params[:name] %><% end %>
 
 <div class="gridster">
   <ul>
 
     <%= render "airport_info" %>
     <%= render "baggage_kpi" %>
-
     <%= render "xplane_kpi" %>
     <%= render "door_opening_kpi" %>
     <%= render "on_time_performance_kpi" %>
@@ -15,5 +13,4 @@
 
 
   </ul>
-  <div data-id="ticker_<%= params[:name] %>" data-view="Ticker" style="display: none;" ></div>
 </div>
