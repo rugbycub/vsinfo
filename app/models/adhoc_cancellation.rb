@@ -1,3 +1,3 @@
-class AdhocCancellation < ActiveRecord::Base
-	belongs_to :flight_schedule
-end
+# class AdhocCancellation < ActiveRecord::Base
+# 	belongs_to :flight_schedule
+# end
