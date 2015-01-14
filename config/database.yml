@@ -13,19 +13,11 @@ test: &TEST
   pool: 5
   username: vsinfo
   password:
-  
-production: 
+
+production:
   adapter: postgresql
   encoding: utf8
-  database: project_development
+  database: project_production
   pool: 5
   username: vsinfo
   password:
-  port: 5432
-
-default: &default
-  adapter: postgresql
-  encoding: unicode
-  # For details on connection pooling, see rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: 5
