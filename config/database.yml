@@ -13,6 +13,15 @@ test: &TEST
   pool: 5
   username: vsinfo
   password:
+  
+production: 
+  adapter: postgresql
+  encoding: utf8
+  database: project_development
+  pool: 5
+  username: vsinfo
+  password:
+  port: 5432
 
 default: &default
   adapter: postgresql
