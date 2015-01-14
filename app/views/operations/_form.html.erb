@@ -27,17 +27,6 @@
 <td></td>
 <td>
 <%= form_for [@airport, turn.arrival] do |f| %>
-  <% if @arrival.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@arrival.errors.count, "error") %> prohibited this arrival from being saved:</h2>
-
-      <ul>
-      <% @arrival.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="field">
     <%= f.label :flight_number %><br>
