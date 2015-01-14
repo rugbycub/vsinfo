@@ -14,15 +14,7 @@ test: &TEST
   username: vsinfo
   password:
 
-production:
-  adapter: postgresql
-  encoding: utf8
-  database: dblgdh4inf5s4a
-  pool: 5
-  username: wlpyokaojoqffd
-  password: Lykh0PGYU1YQ9bsAW39UZjgopD
-
-  default: &default
+default: &default
   adapter: postgresql
   encoding: unicode
   # For details on connection pooling, see rails configuration guide
