@@ -15,12 +15,12 @@
   <tbody>
     <% @operations.each do |operation| %>
       <tr>
-        <td><%= operation.city %></td>
+        <td><%= operation.airport_id %></td>
         <td><%= operation.date %></td>
         <td><%= operation.staff_assignment %></td>
-        <td><%= link_to 'Show', operation %></td>
-        <td><%= link_to 'Edit', edit_operation_path(operation) %></td>
-        <td><%= link_to 'Destroy', operation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', airport_operation_path(id: operation.id) %></td>
+        <td><%= link_to 'Edit', edit_airport_operation_path(id: operation.id) %></td>
+        <td><%= link_to 'Destroy', airport_operation_path(id: operation.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Operation', new_operation_path %>
+<%= link_to 'New Operation', new_airport_operation_path %>

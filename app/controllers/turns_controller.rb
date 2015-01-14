@@ -42,6 +42,6 @@ class TurnsController < ApplicationController
     end
 
     def turn_params
-      params.require(:turn).permit(:aircraft, :arrival, :departure, :gate)
+      params.require(:turn).permit(:reg, :arrival, :departure, :gate)
     end
 end

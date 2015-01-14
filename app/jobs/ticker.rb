@@ -4,5 +4,5 @@ ticker_items = [
 ]
  
 Dashing.scheduler.every '5m', first_in: 1.second.since, allow_overlapping: false do
-	Dashing.send_event( 'ticker', { :items => ticker_items } )
+	Dashing.send_event( 'ticker_lax', { :items => ticker_items } )
 end

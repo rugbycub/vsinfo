@@ -1,5 +1,5 @@
 # require 'HTTParty'
-# require 'json' 
+# require 'json'
 # require 'crack'
 # require 'pry'
 
@@ -13,7 +13,7 @@
 
 # Dashing.scheduler.every '5m', first_in: 1.second.since do |job|
 #   airport_checkpoint_waittimes = []
-#   output = []  
+#   output = []
 #   airports_resource_response = HTTParty.get(airports_resource)
 
 #   airports_resource_xml = Crack::XML.parse(airports_resource_response.body)
@@ -23,7 +23,7 @@
 #     if airport['shortcode'] == airport_code.upcase
 #       airport_name = airport['name']
 
-#       # Stupidness in JSON convesion.. SHould always be array        
+#       # Stupidness in JSON convesion.. SHould always be array
 #       if !airport['checkpoints']['checkpoint'].kind_of?(Array)
 #         airport['checkpoints']['checkpoint'] = [airport['checkpoints']['checkpoint']]
 #       end
@@ -37,24 +37,24 @@
 #          airport_checkpoint_resouce_response = HTTParty.get(airport_checkpoint_resource, { :query => { :ap => airport_code, :output => 'json'} })
 #          airport_checkpoint_resouce_json = JSON.parse(airport_checkpoint_resouce_response.body)
 
-#          airport_checkpoint_resouce_json['WaitTimes'].each do |waittime|        
+#          airport_checkpoint_resouce_json['WaitTimes'].each do |waittime|
 #           if waittime['CheckpointIndex'] == checkpoint['id']
 #             #puts "Wait Time " + waittime['WaitTimeIndex'] + " minutes"
 #             #puts "Updated: " + waittime["Created_Datetime"] #9/2/2013 2:24:33 AM
-#             # 
+#             #
 #             checkpoint_last_updated_at = DateTime.strptime(waittime["Created_Datetime"], '%m/%d/%Y %H:%M:%S %p')
-            
-            
+
+
 #               # puts waittime["Created_Datetime"] + " Is TODAY!"
 #               airport_checkpoint_waittimes << {
-#                 :id        => checkpoint["id"], 
+#                 :id        => checkpoint["id"],
 #                 :name       => checkpoint["longname"],
 #                 :wait_time  => waittime['WaitTimeIndex'],
 #                 :updated_at => checkpoint_last_updated_at
 #               }
 #             end
 #           end
-        
+
 #       end
 #     end
 #   end
@@ -68,14 +68,14 @@
 #     data.sort_by!{ |c| c[:updated_at].to_s.to_i}
 #     if data.size > 1
 
-#       output << { 
+#       output << {
 #         :id          => data[0][:id],
 #         :name        => data[0][:name],
 #         :wait_time   => wait_time_values[(data[0][:wait_time].to_i) - 1],
 #         :update      => data[0][:updated_at]
 #       }
-#     else 
-#       output << { 
+#     else
+#       output << {
 #         :id         => data[0][:id],
 #         :name        => data[0][:name],
 #         :wait_time   => wait_time_values[(data[0][:wait_time].to_i) - 1],
@@ -84,7 +84,7 @@
 #     end
 #   end
 #   output.cycle do |o|
-#     Dashing.send_event('waittime', { 
+#     Dashing.send_event('waittime', {
 #       title: airport_name,
 #       checkpoint: o[:name],
 #       waittime: o[:wait_time],
@@ -112,7 +112,7 @@ Flight.where(origin: @airport.code).each do |x|
 end
 
 Flight.where(destination: @airport.code).each do |x|
-  FlightSchedule.where(flight_number: x).where("start_date < ? AND end_date > ?", date, date).each do |arrival| 
+  FlightSchedule.where(flight_number: x).where("start_date < ? AND end_date > ?", date, date).each do |arrival|
     arrival_list.push(x)
     arrival_schedule.push(arrival)
   end
@@ -140,9 +140,7 @@ turns_arr.each do |x|
   @departure = (@turn.departure = Departure.new)
   @arrival = (@turn.arrival = Arrival.new)
   @departure.flight = x['departure']
-  @arival.flight = x['arrival']
+  @arrival.flight = x['arrival']
   @departure.save
   @arrival.save
 end
-  
-  

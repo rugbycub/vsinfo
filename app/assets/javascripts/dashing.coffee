@@ -9,7 +9,7 @@ Dashing.on 'ready', ->
   if $(window).width() > 768
     Batman.setImmediate ->
       $('.gridster').width(contentWidth)
-      $('.gridster ul:first').gridster
+      $('.gridster > ul').gridster
         widget_margins: Dashing.widget_margins
         widget_base_dimensions: Dashing.widget_base_dimensions
         avoid_overlapped_widgets: !Dashing.customGridsterLayout
@@ -19,7 +19,7 @@ Dashing.on 'ready', ->
    else       
     Batman.setImmediate ->
         $('.gridster').width(contentWidth)
-        $('.gridster ul:first').gridster
+        $('.gridster > ul').gridster
           widget_margins: Dashing.widget_margins
           widget_base_dimensions: Dashing.widget_base_dimensions
           avoid_overlapped_widgets: !Dashing.customGridsterLayout
