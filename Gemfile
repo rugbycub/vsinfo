@@ -18,6 +18,7 @@ gem 'htmlentities'
 gem 'icalendar'
 
 gem 'pg'
+gem 'rails_12factor', group: :production
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
