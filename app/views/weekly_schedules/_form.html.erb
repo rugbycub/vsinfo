@@ -1,0 +1,45 @@
+  
+  <td>
+  <div class="field">
+    <%= f.label :monday_id %><br>
+    <%= f.collection_select(:monday_id, Position.all, :id, :name) %>
+  </div>
+    </td>
+  <td>
+  <div class="field">
+    <%= f.label :tuesday_id %><br>
+    <%= f.collection_select(:tuesday_id, Position.all, :id, :name) %>
+  </div>
+    </td>
+  <td>
+  <div class="field">
+    <%= f.label :wednesday_id %><br>
+    <%= f.collection_select(:wednesday_id, Position.all, :id, :name) %>
+  </div>
+    </td>
+  <td>
+  <div class="field">
+    <%= f.label :thursday_id %><br>
+    <%= f.collection_select(:thursday_id, Position.all, :id, :name) %>
+  </div>
+    </td>
+  <td>
+  <div class="field">
+    <%= f.label :friday_id %><br>
+    <%= f.collection_select(:friday_id, Position.all, :id, :name) %>
+  </div>
+    </td>
+  <td>
+  <div class="field">
+    <%= f.label :saturday_id %><br>
+    <%= f.collection_select(:saturday_id, Position.all, :id, :name) %>%>
+  </div>
+    </td>
+  <td>
+  <div class="field">
+    <%= f.label :sunday_id %><br>
+    <%= f.collection_select(:sunday_id, Position.all, :id, :name) %>
+  </div>
+  </td>
+  </tr>
+  

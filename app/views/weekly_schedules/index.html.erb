@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Weekly Schedules</h1>
+<%= form_tag edit_individual_airport_weekly_schedules_path do %>
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Employee</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+      <th>Saturday</th>
+      <th>Sunday</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @weekly_schedules.each_with_index do |weekly_schedule, index| %>
+      <tr>
+        <td><%= check_box_tag "schedule_ids[]", @schedule_item[index]["id"] %></td>
+        <td><%= @schedule_item[index]["employee_name"] %></td>
+        <td><%= @schedule_item[index]["monday"] %></td>
+        <td><%= @schedule_item[index]["tuesday"] %></td>
+        <td><%= @schedule_item[index]["wednesday"] %></td>
+        <td><%= @schedule_item[index]["thursday"] %></td>
+        <td><%= @schedule_item[index]["friday"] %></td>
+        <td><%= @schedule_item[index]["saturday"] %></td>
+        <td><%= @schedule_item[index]["sunday"] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<p><%= submit_tag "Edit Checked" %></p>
+<% end %>
+
+<br>
+

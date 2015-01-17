@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @employee.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @employee.last_name %>
+</p>
+
+<p>
+  <strong>Supervisor:</strong>
+  <%= @employee.supervisor %>
+</p>
+
+<p>
+  <strong>Tco:</strong>
+  <%= @employee.tco %>
+</p>
+
+<p>
+  <strong>Fmu:</strong>
+  <%= @employee.fmu %>
+</p>
+
+<p>
+  <strong>Ticketer:</strong>
+  <%= @employee.ticketer %>
+</p>
+
+<p>
+  <strong>Airport:</strong>
+  <%= @employee.airport_id %>
+</p>
+
+<%= link_to 'Edit', edit_employee_path(@employee) %> |
+<%= link_to 'Back', employees_path %>

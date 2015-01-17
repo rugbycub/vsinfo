@@ -8,6 +8,7 @@ class CreateTurns < ActiveRecord::Migration
       t.string :gate
       t.date :date
       t.integer :operation_id
+      t.boolean :noop
 
       t.timestamps null: false
     end

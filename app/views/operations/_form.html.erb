@@ -1,94 +1,247 @@
-<%= form_for [@airport, @operation] do |f| %>
-
-  <div class="field">
-    <%= f.label :airport_id %><br>
-    <%= f.text_field :airport_id %>
+<%= form_for [@airport, @operation] do |o| %>
+<% counter = 0 %>
+<div class="row clearfix">
+  <div class="col-md-1 column">
+    <h3></h3>
   </div>
-  <div class="field">
-    <%= f.label :date %><br>
-    <%= f.date_select :date %>
-  </div>
-  <div class="field">
-    <%= f.label :staff_assignment %><br>
-    <%= f.number_field :staff_assignment %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-<table>
-<tr>
-<th>turn</th>
-<th>arrival</th>
-<th>departure</th>
-</tr>
-<% @turns.each do |turn| %>
-<tr>
-<td></td>
-<td>
-<%= form_for [@airport, turn.arrival] do |f| %>
-  <% if @arrival.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@arrival.errors.count, "error") %> prohibited this arrival from being saved:</h2>
-
-      <ul>
-      <% @arrival.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <div class="col-md-11 column">
+    <div class="field">
+      <%= @airport.name %><br>
     </div>
+    <div class="field">
+      <%= o.label :date %><br>
+      <%= o.date_select :date %>
+    </div>
+
+
+
+
+  <% @turns.each_with_index do |turn, index| %>
+  <div class="row clearfix">
+    <div class="col-md-1 column">
+      <h3></h3>
+    </div>
+    <div class="col-md-1 column">
+            <h3>turn</h3>
+      <%= fields_for "turn[]", turn do |turn| %>
+
+
+      <div class="field">
+      <div class="field">
+    <%= turn.label :noop %><br>
+    <%= turn.check_box :noop %>
+    
+  </div>
+        <%= turn.label :airplane %><br>
+        <%= turn.collection_select :airplane, @turns_arr.select{|key, hash| key["turn"].id == @turns[counter].id}.first["aircraft_options"], :reg, :reg %>
+      </div>
+      <div class="field">
+        <%= turn.label :gate %><br>
+        <%= turn.text_field :gate %>
+      </div>
+      <% end %>
+
+    </div>
+    <div class="col-md-1 column">
+      <h3></h3>
+    </div>
+
+    <div class="col-md-4 column" style="border-left:1px solid #000">
+            <h3>Arrival <%= index + 1 %></h3>
+      <%= fields_for "arrival[]", turn.arrival do |arrival| %>
+
+      <div class="field">
+        <%= arrival.label :flight_number %><br>
+        <%= arrival.text_field :flight_number %>
+      </div>
+      <table>
+        <tr>
+          <td>
+            <div class="field">
+              <%= arrival.label :sta %><br>
+              <%= arrival.time_select :sta %>
+            </div>
+          </td>
+          <td>
+            <div class="field">
+              <%= arrival.label :eta %><br>
+              <%= arrival.time_select :eta %>
+            </div>
+          </td>
+          <td>
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td>
+            <div class="field">
+              <%= arrival.label :captain %><br>
+              <%= arrival.text_field :captain %>
+            </div>
+          </td>
+          <td>
+            <div class="field">
+              <%= arrival.label :fsm %><br>
+              <%= arrival.text_field :fsm %>
+            </div>
+          </td>
+          <td>
+          </td>
+
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td>
+            <div class="field">
+              <%= arrival.label :j_booked %><br>
+              <%= arrival.text_field :j_booked %>
+            </div>
+          </td>
+          <td>
+            <div class="field">
+              <%= arrival.label :w_booked %><br>
+              <%= arrival.text_field :w_booked %>
+            </div>
+          </td>
+          <td>
+            <div class="field">
+              <%= arrival.label :y_booked %><br>
+              <%= arrival.text_field :y_booked %>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <div class="field">
+        <%= arrival.label :specials %><br>
+        <%= arrival.text_area :specials %>
+      </div>
+      <% end %>
+    </div>
+    <div class="col-md-4 column" style="border-left:1px solid #000">
+            <h3>Departure</h3>
+      <%= fields_for "departure[]", turn.departure do |departure| %>
+
+      <div class="field">
+        <%= departure.label :flight_number %><br>
+        <%= departure.text_field :flight_number %>
+      </div>
+      <table>
+        <tr>
+          <td>
+            <div class="field">
+              <%= departure.label :std %><br>
+              <%= departure.time_select :std %>
+            </div>
+          </td>
+          <td>
+            <div class="field">
+              <%= departure.label :etd %><br>
+              <%= departure.time_select :etd %>
+            </div>
+          </td>
+          <td>
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td>
+            <div class="field">
+              <%= departure.label :captain %><br>
+              <%= departure.text_field :captain %>
+            </div>
+          </td>
+          <td>
+            <div class="field">
+              <%= departure.label :fsm %><br>
+              <%= departure.text_field :fsm %>
+            </div>
+          </td>
+          <td>
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td>
+            <div class="field">
+              <%= departure.label :j_booked %><br>
+              <%= departure.text_field :j_booked %>
+            </div>
+          </td>
+          <td>
+            <div class="field">
+              <%= departure.label :w_booked %><br>
+              <%= departure.text_field :w_booked %>
+            </div>
+          </td>
+          <td>
+            <div class="field">
+              <%= departure.label :y_booked %><br>
+              <%= departure.text_field :y_booked %>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="field">
+              <%= departure.label :j_meals %><br>
+              <%= departure.text_field :j_meals %>
+            </div>
+          </td>
+          <td>
+            <div class="field">
+              <%= departure.label :w_meals %><br>
+              <%= departure.text_field :w_meals %>
+            </div>
+          </td>
+          <td>
+            <div class="field">
+              <%= departure.label :y_meals %><br>
+              <%= departure.text_field :y_meals %>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="field">
+              <%= departure.label :j_sby %><br>
+              <%= departure.text_field :j_sby %>
+            </div>
+          </td>
+          <td>
+            <div class="field">
+              <%= departure.label :w_sby %><br>
+              <%= departure.text_field :w_sby %>
+            </div>
+          </td>
+          <td>
+            <div class="field">
+              <%= departure.label :y_sby %><br>
+              <%= departure.text_field :y_sby %>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <div class="field">
+        <%= departure.label :specials %><br>
+        <%= departure.text_area :specials %>
+      </div>
+      <% end %>
+
+    </div>
+  </div>
+  <hr>
   <% end %>
-
-  <div class="field">
-    <%= f.label :flight_number %><br>
-    <%= f.text_field :flight_number %>
-  </div>
-  <div class="field">
-    <%= f.label :sta %><br>
-    <%= f.time_select :sta %>
-  </div>
-  <div class="field">
-    <%= f.label :eta %><br>
-    <%= f.time_select :eta %>
-  </div>
-  <div class="field">
-    <%= f.label :captain %><br>
-    <%= f.text_field :captain %>
-  </div>
-  <div class="field">
-    <%= f.label :fsm %><br>
-    <%= f.text_field :fsm %>
-  </div>
-  <div class="field">
-    <%= f.label :j_booked %><br>
-    <%= f.text_field :j_booked %>
-  </div>
-  <div class="field">
-    <%= f.label :w_booked %><br>
-    <%= f.text_field :w_booked %>
-  </div>
-  <div class="field">
-    <%= f.label :y_booked %><br>
-    <%= f.text_field :y_booked %>
-  </div>
-  <div class="field">
-    <%= f.label :total_booked %><br>
-    <%= f.text_field :total_booked %>
-  </div>
-  <div class="field">
-    <%= f.label :specials %><br>
-    <%= f.text_area :specials %>
-  </div>
   <div class="actions">
-    <%= f.submit %>
-  </div>
-  </td>
-  <td></td>
-  </tr>
-<% end %>
 
 
 
-<% end %>
-</table>
+    <%= o.submit %>
+
+    <div class="actions">
+
+      <% end %>
 

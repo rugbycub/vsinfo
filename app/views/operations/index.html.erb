@@ -19,8 +19,8 @@
         <td><%= operation.date %></td>
         <td><%= operation.staff_assignment %></td>
         <td><%= link_to 'Show', airport_operation_path(id: operation.id) %></td>
-        <td><%= link_to 'Edit', edit_airport_operation_path(id: operation.id) %></td>
-        <td><%= link_to 'Destroy', airport_operation_path(id: operation.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Send to Dashboard', send_to_dashboard_airport_operation_path(id: operation.id) %> </td>
+        
       </tr>
     <% end %>
   </tbody>

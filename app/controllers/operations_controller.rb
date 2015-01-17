@@ -17,13 +17,13 @@ class OperationsController < ApplicationController
 
   def new
     @airport = Airport.find(params[:airport_id])
-    date = "4/10/2015".to_date
+    date = Date.today
     @operation = @airport.operations.new(date: date)
     departure_list = []
     departure_schedule = []
     arrival_list = []
     arrival_schedule = []
-    turns_arr = []
+    @turns_arr = []
     ac_list_arr = []
     @turns = []
 
@@ -52,37 +52,61 @@ class OperationsController < ApplicationController
       turn.save
       departure = (turn.departure = Departure.create)
       departure.flight = departure_list[x]
+      departure.std = departure_schedule[x].departure
       departure.save
       arrival = (turn.arrival = Arrival.create)
       arrival.flight = arrival_list[x]
+      arrival.sta = arrival_schedule[x].arrival
       arrival.save
       turn_item = Hash.new
       turn_item["turn"] = turn
       turn_item["departure"] = departure
       turn_item["departure_sked"] = departure_schedule[x]
       turn_item["arrival"] = arrival
-      turn_item["arrival_sked"] = arrival_schedule[x],
+      turn_item["arrival_sked"] = arrival_schedule[x]
       turn_item["aircraft_options"] = ac_list_arr[x]
-      turns_arr.push(turn_item)
+      @turns_arr.push(turn_item)
+      @turns.push(turn)
     end
 
   end
 
   def edit
     @airport = Airport.find(params[:airport_id])
+    @operation = Operation.find(params[:id])
+    @turns = @operation.turns
   end
 
   def create
     @airport = Airport.find(params[:airport_id])
-    @operation = @airport.operations.new(operation_params)
-    @operation.save
+    @operation = Operation.find(params[:id])
+    params[:turn].each do |key, value|
+      turn = Turn.find(key)
+      turn.gate = value[:gate]
+      airplane =  Airplane.find(value[:airplane])
+      turn.airplane = airplane
+      turn.save
+    end
+    Arrival.update(params[:arrival].keys, params[:arrival].values)
+    Departure.update(params[:departure].keys, params[:departure].values)
     respond_with(@operation)
   end
 
   def update
     @airport = Airport.find(params[:airport_id])
-    @operation.update(operation_params)
-    respond_with(@operation)
+    @operation = Operation.find(params[:id])
+    params[:turn].each do |key, value|
+      turn = Turn.find(key)
+      turn.gate = value[:gate]
+      airplane =  Airplane.find(value[:airplane])
+      turn.airplane = airplane
+      turn.save
+    end
+    Arrival.update(params[:arrival].keys, params[:arrival].values)
+    Departure.update(params[:departure].keys, params[:departure].values)
+    respond_to do |f|
+      f.html { redirect_to airport_operation_path(@airport,@operation), notice: 'Daily Operation Created' }
+    end
   end
 
   def destroy
@@ -94,6 +118,66 @@ class OperationsController < ApplicationController
     @turn = @operation.turns.new
     @turn.save
   end
+
+  def send_to_dashboard
+    @airport = Airport.find(params[:airport_id])
+    @operation = Operation.find(params[:id])
+    @turns = @operation.turns
+
+    @turns.each_with_index do |turn, index|
+      @departure = turn.departure
+      @arrival = turn.arrival
+      @airplane = turn.airplane
+
+      Dashing.send_event "flifo_#{index}_#{@airport.code.downcase}", {
+        inbound_flight_number: @arrival.flight_number,
+        outbound_flight_number: @departure.flight_number,
+        registration: @airplane.reg,
+        aircraft_type: @airplane.ac_type ,
+        aircraft_name: @airplane.name ,
+        j: @airplane.j_capacity,
+        w: @airplane.w_capacity,
+        y: @airplane.y_capacity,
+        tob: @airplane.total_capacity,
+        gate: turn.gate 
+        }
+      Dashing.send_event "arrival_#{index}_#{@airport.code.downcase}", {
+        inbound_flight_number: @arrival.flight_number,
+        sta: @arrival.sta.strftime("%H:%M"), 
+        eta: @arrival.eta.strftime("%H:%M"),
+        captain: @arrival.captain,
+        fsm: @arrival.fsm,
+        j: @arrival.j_booked,
+        w: @arrival.w_booked,
+        y: @arrival.y_booked,
+        tob: @arrival.total_booked,
+        specials: @arrival.specials
+      } 
+      Dashing.send_event("departure_#{index}_#{@airport.code.downcase}", {
+        flight_number: @departure.flight_number,
+        std: @departure.std.strftime("%H:%M"),
+        etd: @departure.etd.strftime("%H:%M"),
+        captain: @departure.captain,
+        fsm: @departure.fsm,
+        j_booked: @departure.j_booked,
+        w_booked: @departure.w_booked,
+        y_booked: @departure.y_booked,
+        total_booked: @departure.total_booked,
+        j_meals: @departure.j_meals,
+        w_meals: @departure.w_meals,
+        y_meals: @departure.y_meals,
+        total_meals: @departure.total_meals,
+        j_staff: @departure.j_sby,
+        w_staff: @departure.w_sby,
+        y_staff: @departure.y_sby,
+        total_staff: @departure.total_sby,
+        specials: @departure.specials 
+        })
+      Dashing.send_event("notes_#{index}_#{@airport.code}", { notes_content: "NOTES" })
+    end
+    redirect_to airport_operations_path(@airport), notice: 'Sent to Dashboard' 
+  end
+
 
   private
     def set_operation

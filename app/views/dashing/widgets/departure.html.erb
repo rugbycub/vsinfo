@@ -1,37 +1,56 @@
-<h1 class="title"> Departure: <span data-bind="outbound_flight_number"></span></h1>
+
+<h1 class="title"> Departure: <span data-bind="flight_number"></span></h1>
 <h3>STD: <span data-bind="std"></span>     ETD: <span data-bind="etd"></span>
-	<h3>Capt: <span data-bind="captain"></span></h3>
-	<h3>FSM: <span data-bind="fsm"></span></h3>
-	<hr>
-	<table>
-		<tr>
-			<th></th>
-			<th>J</th>
-			<th>W</th>
-			<th>Y</th>
-			<th>Total</th>
-		</tr>
-		<tr>
-			<td>Booked</td>
-			<td><input class="meter" data-angleOffset=-125 data-angleArc=250 data-width=90 data-readOnly=true data-bind-value="value_j | shortenedNumber" data-bind-data-min="min" data-bind-data-max="max_j" data-bind-data-oversold="oversold" data-bind-data-capacity_warning="capacity_warning"></td>
-			<td><input class="meter" data-angleOffset=-125 data-angleArc=250 data-width=90 data-readOnly=true data-bind-value="value_w | shortenedNumber" data-bind-data-min="min" data-bind-data-max="max_w" data-bind-data-oversold="oversold" data-bind-data-capacity_warning="capacity_warning"></td>
-			<td><input class="meter" data-angleOffset=-125 data-angleArc=250 data-width=90 data-readOnly=true data-bind-value="value_y | shortenedNumber" data-bind-data-min="min" data-bind-data-max="max_y" data-bind-data-oversold="oversold" data-bind-data-capacity_warning="capacity_warning"></td>
-			<td><input class="meter" data-angleOffset=-125 data-angleArc=250 data-width=90 data-readOnly=true data-bind-value="value_total | shortenedNumber" data-bind-data-min="min" data-bind-data-max="max_total" data-bind-data-oversold="oversold" data-bind-data-capacity_warning="capacity_warning"></td></td>
-		</tr>
-		<tr>
-			<td>Meals</td>
-			<td><span data-bind="j_meals"></td>
-			<td><span data-bind="w_meals"></td>
-			<td><span data-bind="y_meals"></td>
-			<td><span data-bind="total_meals"></td>
-		</tr>
-		<tr>
-			<td>Standby</td>
-			<td><span data-bind="j_staff"></td>
-			<td><span data-bind="w_staff"></td>
-			<td><span data-bind="y_staff"></td>
-			<td><span data-bind="total_staff"></td>
-		</tr>
-	</table>
+<h3>Capt: <span data-bind="captain"></span></h3>
+<h3>FSM: <span data-bind="fsm"></span></h3>
 <hr>
-	<h3>Specials: </h3>
+
+<table>
+  <tr>
+    <th></th>
+    <th>J</th>
+    <th>W</th>
+    <th>Y</th>
+    <th>Total</th>
+  </tr>
+  <tr>
+    <td>Booked</td>
+    <td data-bind-class="j_booked">
+      <input class='meter' data-bind-value='j_booked_percentage'>
+      <div class='value' data-bind='j_booked'></div>
+    </td>
+    <td data-bind-class="w_booked">
+      <input class='meter' data-bind-value='w_booked_percentage'>
+      <div class='value' data-bind='w_booked'></div>
+    </td>
+    <td data-bind-class="y_booked">
+      <input class='meter' data-bind-value='y_booked_percentage'>
+      <div class='value' data-bind='y_booked'></div>
+    </td>
+    <td data-bind-class="total_booked">
+      <input class='meter' data-bind-value='total_booked_percentage'>
+      <div class='value' data-bind='total_booked'></div>
+    </td>
+  </tr>
+
+  <tr>
+    <td>Meals</td>
+    <td><span data-bind="j_meals"></td>
+    <td><span data-bind="w_meals"></td>
+    <td><span data-bind="y_meals"></td>
+    <td><span data-bind="total_meals"></td>
+  </tr>
+  <tr>
+    <td>Standby</td>
+    <td><span data-bind="j_staff"></td>
+    <td><span data-bind="w_staff"></td>
+    <td><span data-bind="y_staff"></td>
+    <td><span data-bind="total_staff"></td>
+  </tr>
+</table>
+
+<hr>
+
+
+<h3 class='label'>Specials</h3>
+<div class='value' data-bind='specials'></div>

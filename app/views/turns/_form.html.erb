@@ -1,33 +1,23 @@
-<%= form_for(@turn) do |f| %>
-  <% if @turn.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@turn.errors.count, "error") %> prohibited this turn from being saved:</h2>
+<%= fields_for "turn", turn do |turn| %>
 
-      <ul>
-      <% @turn.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="field">
-    <%= f.label :aircraft %><br>
-    <%= f.text_field :aircraft %>
+    <%= turn.label :aircraft %><br>
+    <%= turn.text_field :aircraft %>
   </div>
   <div class="field">
-    <%= f.label :arrival %><br>
-    <%= f.text_field :arrival %>
+    <%= turn.label :arrival %><br>
+    <%= turn.text_field :arrival %>
   </div>
   <div class="field">
-    <%= f.label :departure %><br>
-    <%= f.text_field :departure %>
+    <%= turn.label :departure %><br>
+    <%= turn.text_field :departure %>
   </div>
   <div class="field">
-    <%= f.label :gate %><br>
-    <%= f.text_field :gate %>
+    <%= turn.label :gate %><br>
+    <%= turn.text_field :gate %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= turn.submit %>
   </div>
 <% end %>

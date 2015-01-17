@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
+  resources :weekly_schedules
+
+  resources :employees
+
   resources :airports do
     resources :positions
-    resources :operations
+    resources :operations do
+      get 'send_to_dashboard', on: :member
+    end
     resources :adhoc_cancellations
     resources :flights
     resources :flight_schedules
@@ -9,9 +15,15 @@ Rails.application.routes.draw do
     resources :arrivals
     resources :airplanes
     resources :departures
+    resources :weekly_schedules do
+        post 'edit_individual', on: :collection 
+        put 'update_individual', on: :collection
+    end
   end
 
   mount Dashing::Engine, at: Dashing.config.engine_path
+
+  root to: "airports#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
