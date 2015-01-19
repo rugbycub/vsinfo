@@ -1,4 +1,5 @@
 class WeeklySchedule < ActiveRecord::Base
+
 	after_create :set_unassigned
   belongs_to :employee
   belongs_to :monday,  class_name: "Position", foreign_key: "monday_id"

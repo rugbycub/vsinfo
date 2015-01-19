@@ -1,0 +1,34 @@
+e.where(:"#{Date.today.strftime("%A").downcase}_id" => 2)
+
+supervisor = []
+e.where(:"#{Date.today.strftime("%A").downcase}_id" =>1).push supervisor
+tco
+e.where(:"#{Date.today.strftime("%A").downcase}_id" =>2)
+FMU
+e.where(:"#{Date.today.strftime("%A").downcase}_id" =>3)
+Ticketer/Cashier
+e.where(:"#{Date.today.strftime("%A").downcase}_id" =>4)
+Baggage
+e.where(:"#{Date.today.strftime("%A").downcase}_id" =>5)
+Lounge
+e.where(:"#{Date.today.strftime("%A").downcase}_id" =>6)
+Arrival Lead
+e.where(:"#{Date.today.strftime("%A").downcase}_id" =>7)
+Curb / Y
+e.where(:"#{Date.today.strftime("%A").downcase}_id" =>8)
+Gate Lead
+e.where(:"#{Date.today.strftime("%A").downcase}_id" =>9)
+J-CLS
+e.where(:"#{Date.today.strftime("%A").downcase}_id" =>10)
+W-CLS
+e.where(:"#{Date.today.strftime("%A").downcase}_id" =>11)
+Y-CLS
+e.where(:"#{Date.today.strftime("%A").downcase}_id" =>12)
+Lobby
+e.where(:"#{Date.today.strftime("%A").downcase}_id" =>13)
+Bag Drop
+e.where(:"#{Date.today.strftime("%A").downcase}_id" =>14)
+DAY OFF
+e.where(:"#{Date.today.strftime("%A").downcase}_id" =>15)
+UNASSIGNED
+e.where(:"#{Date.today.strftime("%A").downcase}_id" =>16)

@@ -654,6 +654,7 @@ Position.create( name: "Y-CLS", certification: FALSE)
 Position.create( name: "Lobby", certification: FALSE)
 Position.create( name: "Bag Drop", certification: FALSE)
 Position.create( name: "DAY OFF", certification: FALSE)
+Position.create( name: "UNASSIGNED", certification: FALSE)
 
 
 @airport.employees.create(first_name: "Angela", last_name: "Vigil")
