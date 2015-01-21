@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150116220335) do
+ActiveRecord::Schema.define(version: 20150121031510) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,14 +39,15 @@ ActiveRecord::Schema.define(version: 20150116220335) do
   add_index "airplanes", ["reg"], name: "index_airplanes_on_reg", unique: true, using: :btree
 
   create_table "airports", id: false, force: true do |t|
-    t.string   "code",       null: false
+    t.string   "code",            null: false
     t.string   "name"
     t.string   "city"
     t.string   "country"
     t.string   "latlon"
     t.string   "timezone"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
   end
 
   add_index "airports", ["code"], name: "index_airports_on_code", unique: true, using: :btree

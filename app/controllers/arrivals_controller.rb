@@ -1,5 +1,6 @@
 class ArrivalsController < ApplicationController
   before_action :set_arrival, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize
 
   respond_to :html
 

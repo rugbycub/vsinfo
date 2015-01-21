@@ -7,9 +7,34 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+
+<header style:"position: relative; width: 100%;margin-top: -50px; height: 50px; clear: both;">
+  <div class="container">
+    <%= link_to "VS INFO", root_path, code: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Home", root_path %></li>
+        <% if logged_in? %>
+          <li><%= link_to "Airports", '#' %></li>
+          <li><%= link_to "Profile", current_airport %></li>
+          <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+        <% else %>
+          <li><%= link_to "Log in", login_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<body style: "min-height: 400px; margin-bottom: 100px; clear: both;">
 
 <%= yield %>
 
 </body>
+
+
+
+
+
+
 </html>

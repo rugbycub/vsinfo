@@ -1,5 +1,6 @@
 class WeeklySchedulesController < ApplicationController
   before_action :set_weekly_schedule, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize
 
   respond_to :html
 
