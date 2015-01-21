@@ -11,7 +11,6 @@ gem 'crack'
 gem 'httparty'
 gem 'pry'
 gem 'tod'
-gem 'responders', '~> 2.0'
 gem 'nokogiri'
 gem 'htmlentities'
 
