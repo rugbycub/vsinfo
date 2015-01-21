@@ -1,34 +1,56 @@
-
+<div id="positions_list" >
 <h1>Supervisor</h1>
-<h3 data-foreach-supervisor="supervisors" data-bind="supervisors | raw"></h3><hr>
+<h3 data-foreach-item="supervisor" data-bind="item | raw"></h3><hr>
 
 <h1>TCO/Flight Prep</h1>
-<h3 data-bind="tco"></h3><hr>
+<h3 data-foreach-item="tco" data-bind="item | raw"></h3><hr>
+
 <h1>FMU</h1>
-<h3 data-bind="fmu"></h3><hr>
+<h3 data-foreach-item="fmu" data-bind="item | raw"></h3><hr>
+
 <h1>Ticketer/Cashier</h1>
-<h3 data-bind="ticketer_1"></h3>
-<h3 data-bind="ticketer_2"></h3><hr>
+<h3 data-foreach-item="ticketer" data-bind="item | raw"></h3><hr>
+
+
+
 <h1>Baggage</h1>
-<h3 data-bind="baggage"></h3><hr>
-<h1>Lounge</h1>
-<h3>VX - <span data-bind="vx_lounge"></span></h3>
-<h3>AC - <span data-bind="ac_lounge"></span></h3><hr>
+<h3 data-foreach-item="baggage" data-bind="item | raw"></h3><hr>
+
+<h1>Clubhouse</h1>
+<h3 data-foreach-item="clubhouse" data-bind="item | raw"></h3><hr>
+
+
 <h1>Arrival Lead</h1>
-<h3 data-bind="arrival_lead"></h3><hr>
+<h3 data-foreach-item="arrival_lead" data-bind="item | raw"></h3><hr>
+
+
 <h1>Curb / Y</h1>
-<h3 data-bind="curb"></h3><hr>
+<h3 data-foreach-item="curb_y" data-bind="item | raw"></h3><hr>
+
+
 <h1>Gate Lead</h1>
-<h3 data-bind="gate_lead"></h3><hr>
+<h3 data-foreach-item="gate_lead" data-bind="item | raw"></h3><hr>
+
+
 <h1>J-CLS</h1>
-<h3 data-bind="j_cls_1"></h3>
-<h3 data-bind="j_cls_2"></h3><hr>
+<h3 data-foreach-item="j_cls" data-bind="item | raw"></h3><hr>
+
+
+
 <h1>W-CLS</h1>
-<h3 data-bind="w_cls"></h3><hr>
+<h3 data-foreach-item="w_cls" data-bind="item | raw"></h3><hr>
+
+
 <h1>Y-CLS</h1>
-<h3 data-bind="y_cls_1"></h3>
-<h3 data-bind="y_cls_2"></h3><hr>
+<h3 data-foreach-item="y_cls" data-bind="item | raw"></h3><hr>
+
+
 <h1>Lobby</h1>
-<h3 data-bind="lobby"></h3><hr>
+<h3 data-foreach-item="lobby" data-bind="item | raw"></h3><hr>
+
+
 <h1>Bag Drop</h1>
-<h3 data-bind="bag_drop"></h3>
+<h3 data-foreach-item="bag_drop" data-bind="item | raw"></h3>
+
+
+</div>

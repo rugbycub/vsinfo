@@ -124,6 +124,33 @@ class OperationsController < ApplicationController
     @operation = Operation.find(params[:id])
     @turns = @operation.turns
 
+    @sked = @airport.weekly_schedules
+    positions = Hash.new
+    Position.all.each do |key|
+      position_sked = @sked.where(:"#{@operation.date.strftime("%A").downcase}_id" => key.id.to_s)
+      arr = positions["#{key.name.downcase}"] = []
+      position_sked.each_with_index do |x, idx|
+        arr.push((x.employee.first_name + " " + x.employee.last_name))
+      end
+    end
+
+    Dashing.send_event "positions_#{@airport.code.downcase}", {
+      supervisor: positions["supervisor"], 
+      tco: positions["tco/flight prep"], 
+      fmu: positions["fmu"], 
+      ticketer: positions["ticketer/cashier"], 
+      baggage: positions["baggage"], 
+      clubhouse: positions["lounge"], 
+      arrival_lead: positions["arrival lead"], 
+      curb_y: positions["curb / y"], 
+      gate_lead: positions["gate lead"], 
+      j_cls: positions["j-cls"], 
+      w_cls: positions["w-cls"], 
+      y_cls: positions["y-cls"], 
+      lobby: positions["lobby"], 
+      bag_drop: positions["bag drop"]
+    }
+
     @turns.each_with_index do |turn, index|
       @departure = turn.departure
       @arrival = turn.arrival
