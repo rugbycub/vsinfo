@@ -4,7 +4,7 @@ gem 'better_errors'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0.rc3'
 # Use sqlite3 as the database for Active Record
-gem 'dashing-rails', '1.0.2'
+gem 'dashing-rails'
 gem 'puma'
 gem 'json'
 gem 'crack'
@@ -55,4 +55,4 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
+ruby '2.1.2p95'
