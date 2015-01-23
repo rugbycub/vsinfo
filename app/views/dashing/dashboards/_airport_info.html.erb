@@ -1,5 +1,5 @@
     <li data-row="1" data-col="1" data-sizex="4" data-sizey="2">
-      <div data-view="Clock" data-city="Los Angeles" data-image=<%= asset_path("logo.png")%>></div>
+      <div data-view="Clock" data-city="<%= Airport.find(params[:city].upcase).name %>" data-image=<%= asset_path("logo.png")%>></div>
     </li>
 
     <li data-row="7" data-col="1" data-sizex="4" data-sizey="2">
@@ -7,7 +7,7 @@
     </li>
 
     <li data-row="3" data-col="1" data-sizex="4" data-sizey="4">
-      <div data-id="flickr_public_<%= params[:name] %>" data-view="Flickr" data-moreinfo="My public photos"></div>
+      <div data-id="flickr_public_<%= params[:city] %>" data-view="Flickr" data-moreinfo="My public photos"></div>
     </li>
 
     <li data-row="9" data-col="1" data-sizex="2" data-sizey="2">
@@ -16,5 +16,5 @@
     </li>
     
     <li data-row="9" data-col="3" data-sizex="2" data-sizey="2">
-      <div data-id="forecast_<%= params[:name] %>" data-view="Forecast" data-title="Weather Forecast" ></div>
+      <div data-id="forecast_<%= params[:city] %>" data-view="Forecast" data-title="Weather Forecast" ></div>
     </li>

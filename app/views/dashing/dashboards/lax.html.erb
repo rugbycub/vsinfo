@@ -9,7 +9,10 @@ $(function() {
 <% content_for :title do %><%= params[:name] %><% end %>
 
 <%= render "dual_flight" %>
-
+<%= preload_city_dashboard(params[:name]) %>
 <%= render "kpi" %>
 
+
+
 <div data-id="ticker_<%= params[:name] %>" data-view="Ticker" style="display: none;" ></div>
+
