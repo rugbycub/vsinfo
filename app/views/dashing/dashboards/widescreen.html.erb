@@ -1,0 +1,17 @@
+<script type='text/javascript'>
+$(function() {
+  Dashing.widget_base_dimensions = [145, 119]
+  Dashing.numColumns = 14
+  Dashing.cycleDashboards({timeInSeconds: 20, stagger: true});
+});
+</script>
+<% content_for :title do %><%= params[:city] %><% end %>
+
+<%= render "dual_flight" %>
+<%= preload_city_dashboard(params[:city]) %>
+<%= render "kpi" %>
+
+
+
+<div data-id="ticker_<%= params[:city] %>" data-view="Ticker" style="display: none;" ></div>
+

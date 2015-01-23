@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:rugbycub/dashing-rails-vsinfo.git
+  remote: https://github.com/rugbycub/dashing-rails-vsinfo.git
   revision: 09b3c45815c3a64c68659740140be18c5d0a2b5e
   specs:
     dashing-rails (2.4.0)
