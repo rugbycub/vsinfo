@@ -226,7 +226,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   crack
-  dashing-rails!
+  dashing-rails (= 2.4.0)!
   htmlentities
   httparty
   icalendar
