@@ -10,8 +10,8 @@ module Dashing
     end
 
     def show
-      render file: dashboard_path(params[:name]), layout: Dashing.config.dashboard_layout_path
       preload_city_dashboard(params[:city])
+      render file: dashboard_path(params[:name]), layout: Dashing.config.dashboard_layout_path
     end
 
     private

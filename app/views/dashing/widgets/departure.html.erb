@@ -8,44 +8,40 @@
 <table>
   <tr>
     <th></th>
-    <th>J</th>
-    <th>W</th>
-    <th>Y</th>
-    <th>Total</th>
+    <th><h1>J</h1></th>
+    <th><h1>W</h1></th>
+    <th><h1>Y</h1></th>
+    <th><h1>Total</h1></th>
   </tr>
   <tr>
-    <td>Booked</td>
+    <td><h1>Booked</h1></td>
     <td data-bind-class="j_booked">
-      <input class='meter' data-bind-value='j_booked_percentage'>
-      <div class='value' data-bind='j_booked'></div>
+      <input class='meter' id="j_booked_meter" data-angleOffset=-125 data-angleArc=250 data-width=75 data-height=75 data-readOnly=true data-bind-j_value="j_value | shortenedNumber" data-bind-data-min="min" data-bind-data-max="j_capacity"data-bind-data-j_capacity="j_capacity" >
     </td>
     <td data-bind-class="w_booked">
-      <input class='meter' data-bind-value='w_booked_percentage'>
-      <div class='value' data-bind='w_booked'></div>
+      <input class='meter' id="w_booked_meter" data-angleOffset=-125 data-angleArc=250 data-width=75 data-height=75 data-readOnly=true data-bind-w_value="w_value | shortenedNumber" data-bind-data-min="min" data-bind-data-max="w_capacity"data-bind-data-w_capacity="w_capacity">
     </td>
     <td data-bind-class="y_booked">
-      <input class='meter' data-bind-value='y_booked_percentage'>
-      <div class='value' data-bind='y_booked'></div>
+      <input class='meter' id="y_booked_meter" data-angleOffset=-125 data-angleArc=250 data-width=75 data-height=75 data-readOnly=true data-bind-y_value="y_value | shortenedNumber" data-bind-data-min="min" data-bind-data-max="y_capacity"data-bind-data-y_capacity="y_capacity" >
     </td>
     <td data-bind-class="total_booked">
-      <input class='meter' data-bind-value='total_booked_percentage'>
-      <div class='value' data-bind='total_booked'></div>
+      <input class='meter' id="total_booked_meter" data-angleOffset=-125 data-angleArc=250 data-width=75 data-height=75 data-readOnly=true data-bind-total_value="total_value | shortenedNumber" data-bind-data-min="min" data-bind-data-max="total_capacity" data-bind-total_capacity="total_capacity" style="position: relative; margin-top: -30px;">
     </td>
   </tr>
 
   <tr>
-    <td>Meals</td>
-    <td><span data-bind="j_meals"></td>
-    <td><span data-bind="w_meals"></td>
-    <td><span data-bind="y_meals"></td>
-    <td><span data-bind="total_meals"></td>
+    <td><h1>Meals</h1></td>
+    <td><h3 data-bind="j_meals"></h3></td>
+    <td><h3 data-bind="w_meals"></h3></td>
+    <td><h3 data-bind="y_meals"></h3></td>
+    <td><h3 data-bind="total_meals"></h3></td>
   </tr>
   <tr>
-    <td>Standby</td>
-    <td><span data-bind="j_staff"></td>
-    <td><span data-bind="w_staff"></td>
-    <td><span data-bind="y_staff"></td>
-    <td><span data-bind="total_staff"></td>
+    <td><h1>Standby</h1></td>
+    <td><h3 data-bind="j_staff"></h3></td>
+    <td><h3 data-bind="w_staff"></h3></td>
+    <td><h3 data-bind="y_staff"></h3></td>
+    <td><h3 data-bind="total_staff"></h3></td>
   </tr>
 </table>
 

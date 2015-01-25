@@ -1,12 +1,12 @@
 // ----------------------------------------------------------------------------
 // Sass declarations
 // ----------------------------------------------------------------------------
-$background-color:  #9c4274;
+$background-color:  rgba(153,153,153,.75);
 
 $title-color:       rgba(255, 255, 255, 0.7);
 $moreinfo-color:    rgba(255, 255, 255, 0.3);
 
-$meter-background:  green;
+$meter-background:  darken($background-color, 15%);
 
 // ----------------------------------------------------------------------------
 // Widget-meter styles
@@ -17,7 +17,7 @@ $meter-background:  green;
 
   input.meter {
     background-color: $meter-background;
-    color: #fff;
+    color: green;
   }
 
   .title {

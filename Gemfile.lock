@@ -1,6 +1,5 @@
-GIT
-  remote: https://github.com/rugbycub/dashing-rails-vsinfo.git
-  revision: 09b3c45815c3a64c68659740140be18c5d0a2b5e
+PATH
+  remote: vendor/gems/dashing-rails-2.4.0
   specs:
     dashing-rails (2.4.0)
       batman-rails (~> 0.16.1)
@@ -227,7 +226,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   crack
-  dashing-rails (= 2.4.0)!
+  dashing-rails!
   htmlentities
   httparty
   icalendar
