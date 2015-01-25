@@ -4,25 +4,9 @@ class Dashing.Departure extends Dashing.Widget
   @accessor 'w_value', Dashing.AnimatedValue
   @accessor 'y_value', Dashing.AnimatedValue
   @accessor 'total_value', Dashing.AnimatedValue
-  @accessor 'max'
 
-  # constructor: ->
-  #   super
-  #   @observe 'j_value', (j_value) ->
-  #     $(@node).find("#j_booked_meter").val(j_value).trigger('change')
-  #     console.log($(@node).find("#j_booked_meter"))
-    
-  #   @observe 'w_value', (w_value) ->
-  #     $(@node).find("#w_booked_meter").val(w_value).trigger('change')
-  #     console.log($(@node).find("#w_booked_meter"))
 
-  #   @observe 'y_value', (y_value) ->
-  #     $(@node).find("#y_booked_meter").val(y_value).trigger('change')
-  #     console.log($(@node).find("#y_booked_meter"))
 
-  #   @observe 'total_value', (total_value) ->
-  #     $(@node).find("#total_booked_meter").val(total_value).trigger('change')
-  #     console.log($(@node).find("#total_booked_meter"))
 
   ready: ->
     @observe 'j_value', (j_value) ->
