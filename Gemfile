@@ -4,8 +4,8 @@ gem 'better_errors'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0.rc3'
 # Use sqlite3 as the database for Active Record
-gem 'dashing-rails', :path => File.join(File.dirname(__FILE__), '/vendor/gems/dashing-rails-2.4.0')
-#gem 'dashing-rails', :git =>"https://github.com/rugbycub/dashing-rails-vsinfo.git"
+#gem 'dashing-rails', :path => File.join(File.dirname(__FILE__), '/vendor/gems/dashing-rails-2.4.0')
+gem 'dashing-rails', :git =>"https://github.com/rugbycub/dashing-rails-vsinfo.git"
 gem 'puma'
 gem 'json'
 gem 'crack'

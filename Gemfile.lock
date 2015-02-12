@@ -1,5 +1,6 @@
-PATH
-  remote: vendor/gems/dashing-rails-2.4.0
+GIT
+  remote: https://github.com/rugbycub/dashing-rails-vsinfo.git
+  revision: 7ada034031a2f011f53dd4a2d8a54b2f22b2ce20
   specs:
     dashing-rails (2.4.0)
       batman-rails (~> 0.16.1)
@@ -161,7 +162,7 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
-    redis (3.2.0)
+    redis (3.2.1)
     responders (2.0.2)
       railties (>= 4.2.0.alpha, < 5)
     rufus-scheduler (3.0.9)
