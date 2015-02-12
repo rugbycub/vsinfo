@@ -1,6 +1,6 @@
 class AirportsController < ApplicationController
   before_action :set_airport, only: [:show, :edit, :update, :destroy]
-  before_filter :authorize, :except => [:index]
+  before_filter :authorize #, :except => [:index]
 
   respond_to :html
 

@@ -1,0 +1,117 @@
+<%= form_for(@metric) do |f| %>
+  <% if @metric.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@metric.errors.count, "error") %> prohibited this metric from being saved:</h2>
+
+      <ul>
+      <% @metric.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :airport_id %><br>
+    <%= f.text_field :airport_id %>
+  </div>
+  <div class="field">
+    <%= f.label :baggage_overall_actual %><br>
+    <%= f.text_field :baggage_overall_actual %>
+  </div>
+  <div class="field">
+    <%= f.label :baggage_delayed_actual %><br>
+    <%= f.text_field :baggage_delayed_actual %>
+  </div>
+  <div class="field">
+    <%= f.label :baggage_damaged_actual %><br>
+    <%= f.text_field :baggage_damaged_actual %>
+  </div>
+  <div class="field">
+    <%= f.label :baggage_pilfered_actual %><br>
+    <%= f.text_field :baggage_pilfered_actual %>
+  </div>
+  <div class="field">
+    <%= f.label :xplane_checkin_actual %><br>
+    <%= f.text_field :xplane_checkin_actual %>
+  </div>
+  <div class="field">
+    <%= f.label :xplane_boarding_actual %><br>
+    <%= f.text_field :xplane_boarding_actual %>
+  </div>
+  <div class="field">
+    <%= f.label :door_opening_dot3_actual %><br>
+    <%= f.text_field :door_opening_dot3_actual %>
+  </div>
+  <div class="field">
+    <%= f.label :door_opening_dot5_actual %><br>
+    <%= f.text_field :door_opening_dot5_actual %>
+  </div>
+  <div class="field">
+    <%= f.label :otp_all_d0_actual %><br>
+    <%= f.text_field :otp_all_d0_actual %>
+  </div>
+  <div class="field">
+    <%= f.label :otp_all_d15_actual %><br>
+    <%= f.text_field :otp_all_d15_actual %>
+  </div>
+  <div class="field">
+    <%= f.label :otp_exc_d0_actual %><br>
+    <%= f.text_field :otp_exc_d0_actual %>
+  </div>
+  <div class="field">
+    <%= f.label :otp_exc_d15_actual %><br>
+    <%= f.text_field :otp_exc_d15_actual %>
+  </div>
+  <div class="field">
+    <%= f.label :baggage_overall_target %><br>
+    <%= f.text_field :baggage_overall_target %>
+  </div>
+  <div class="field">
+    <%= f.label :baggage_delayed_target %><br>
+    <%= f.text_field :baggage_delayed_target %>
+  </div>
+  <div class="field">
+    <%= f.label :baggage_damaged_target %><br>
+    <%= f.text_field :baggage_damaged_target %>
+  </div>
+  <div class="field">
+    <%= f.label :baggage_pilfered_target %><br>
+    <%= f.text_field :baggage_pilfered_target %>
+  </div>
+  <div class="field">
+    <%= f.label :xplane_checkin_target %><br>
+    <%= f.text_field :xplane_checkin_target %>
+  </div>
+  <div class="field">
+    <%= f.label :xplane_boarding_target %><br>
+    <%= f.text_field :xplane_boarding_target %>
+  </div>
+  <div class="field">
+    <%= f.label :door_opening_dot3_target %><br>
+    <%= f.text_field :door_opening_dot3_target %>
+  </div>
+  <div class="field">
+    <%= f.label :door_opening_dot5_target %><br>
+    <%= f.text_field :door_opening_dot5_target %>
+  </div>
+  <div class="field">
+    <%= f.label :otp_all_d0_target %><br>
+    <%= f.text_field :otp_all_d0_target %>
+  </div>
+  <div class="field">
+    <%= f.label :otp_all_d15_target %><br>
+    <%= f.text_field :otp_all_d15_target %>
+  </div>
+  <div class="field">
+    <%= f.label :otp_exc_d0_target %><br>
+    <%= f.text_field :otp_exc_d0_target %>
+  </div>
+  <div class="field">
+    <%= f.label :otp_exc_d15_target %><br>
+    <%= f.text_field :otp_exc_d15_target %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

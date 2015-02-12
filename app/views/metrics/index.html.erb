@@ -1,0 +1,75 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Metrics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Airport</th>
+      <th>Baggage overall actual</th>
+      <th>Baggage delayed actual</th>
+      <th>Baggage damaged actual</th>
+      <th>Baggage pilfered actual</th>
+      <th>Xplane checkin actual</th>
+      <th>Xplane boarding actual</th>
+      <th>Door opening dot3 actual</th>
+      <th>Door opening dot5 actual</th>
+      <th>Otp all d0 actual</th>
+      <th>Otp all d15 actual</th>
+      <th>Otp exc d0 actual</th>
+      <th>Otp exc d15 actual</th>
+      <th>Baggage overall target</th>
+      <th>Baggage delayed target</th>
+      <th>Baggage damaged target</th>
+      <th>Baggage pilfered target</th>
+      <th>Xplane checkin target</th>
+      <th>Xplane boarding target</th>
+      <th>Door opening dot3 target</th>
+      <th>Door opening dot5 target</th>
+      <th>Otp all d0 target</th>
+      <th>Otp all d15 target</th>
+      <th>Otp exc d0 target</th>
+      <th>Otp exc d15 target</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @metrics.each do |metric| %>
+      <tr>
+        <td><%= metric.airport_id %></td>
+        <td><%= metric.baggage_overall_actual %></td>
+        <td><%= metric.baggage_delayed_actual %></td>
+        <td><%= metric.baggage_damaged_actual %></td>
+        <td><%= metric.baggage_pilfered_actual %></td>
+        <td><%= metric.xplane_checkin_actual %></td>
+        <td><%= metric.xplane_boarding_actual %></td>
+        <td><%= metric.door_opening_dot3_actual %></td>
+        <td><%= metric.door_opening_dot5_actual %></td>
+        <td><%= metric.otp_all_d0_actual %></td>
+        <td><%= metric.otp_all_d15_actual %></td>
+        <td><%= metric.otp_exc_d0_actual %></td>
+        <td><%= metric.otp_exc_d15_actual %></td>
+        <td><%= metric.baggage_overall_target %></td>
+        <td><%= metric.baggage_delayed_target %></td>
+        <td><%= metric.baggage_damaged_target %></td>
+        <td><%= metric.baggage_pilfered_target %></td>
+        <td><%= metric.xplane_checkin_target %></td>
+        <td><%= metric.xplane_boarding_target %></td>
+        <td><%= metric.door_opening_dot3_target %></td>
+        <td><%= metric.door_opening_dot5_target %></td>
+        <td><%= metric.otp_all_d0_target %></td>
+        <td><%= metric.otp_all_d15_target %></td>
+        <td><%= metric.otp_exc_d0_target %></td>
+        <td><%= metric.otp_exc_d15_target %></td>
+        <td><%= link_to 'Show', metric %></td>
+        <td><%= link_to 'Edit', edit_metric_path(metric) %></td>
+        <td><%= link_to 'Destroy', metric, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Metric', new_metric_path %>

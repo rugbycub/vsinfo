@@ -7,11 +7,13 @@ $(function() {
 </script>
 <% content_for :title do %><%= params[:city] %><% end %>
 
+
+
 <%= render "dual_flight" %>
 
 <%= render "kpi" %>
 
 
 
-<div data-id="ticker_<%= params[:city] %>" data-view="Ticker" style="display: none;" ></div>
+<div data-id="<%= params[:city] %>_ticker" data-view="Ticker" style="display: none;" ></div>
 

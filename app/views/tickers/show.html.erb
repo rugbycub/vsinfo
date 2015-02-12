@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Airport:</strong>
+  <%= @ticker.airport_id %>
+</p>
+
+<p>
+  <strong>Ticker item:</strong>
+  <%= @ticker.ticker_item %>
+</p>
+
+<%= link_to 'Edit', edit_ticker_path(@ticker) %> |
+<%= link_to 'Back', tickers_path %>

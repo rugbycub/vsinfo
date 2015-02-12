@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150121031510) do
+ActiveRecord::Schema.define(version: 20150127065604) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,15 +39,17 @@ ActiveRecord::Schema.define(version: 20150121031510) do
   add_index "airplanes", ["reg"], name: "index_airplanes_on_reg", unique: true, using: :btree
 
   create_table "airports", id: false, force: true do |t|
-    t.string   "code",            null: false
+    t.string   "code",             null: false
     t.string   "name"
     t.string   "city"
     t.string   "country"
     t.string   "latlon"
     t.string   "timezone"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.string   "password_digest"
+    t.string   "flickr_id"
+    t.string   "calendar_address"
   end
 
   add_index "airports", ["code"], name: "index_airports_on_code", unique: true, using: :btree
@@ -131,6 +133,36 @@ ActiveRecord::Schema.define(version: 20150121031510) do
 
   add_index "flights", ["flight_number"], name: "index_flights_on_flight_number", unique: true, using: :btree
 
+  create_table "metrics", force: true do |t|
+    t.string   "airport_id"
+    t.float    "baggage_overall_actual"
+    t.float    "baggage_delayed_actual"
+    t.float    "baggage_damaged_actual"
+    t.float    "baggage_pilfered_actual"
+    t.float    "xplane_checkin_actual"
+    t.float    "xplane_boarding_actual"
+    t.float    "door_opening_dot3_actual"
+    t.float    "door_opening_dot5_actual"
+    t.float    "otp_all_d0_actual"
+    t.float    "otp_all_d15_actual"
+    t.float    "otp_exc_d0_actual"
+    t.float    "otp_exc_d15_actual"
+    t.float    "baggage_overall_target"
+    t.float    "baggage_delayed_target"
+    t.float    "baggage_damaged_target"
+    t.float    "baggage_pilfered_target"
+    t.float    "xplane_checkin_target"
+    t.float    "xplane_boarding_target"
+    t.float    "door_opening_dot3_target"
+    t.float    "door_opening_dot5_target"
+    t.float    "otp_all_d0_target"
+    t.float    "otp_all_d15_target"
+    t.float    "otp_exc_d0_target"
+    t.float    "otp_exc_d15_target"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
   create_table "notes", force: true do |t|
     t.integer  "turn_id"
     t.text     "note"
@@ -151,6 +183,13 @@ ActiveRecord::Schema.define(version: 20150121031510) do
     t.boolean  "certification"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "tickers", force: true do |t|
+    t.string   "airport_id"
+    t.text     "ticker_item"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "turns", force: true do |t|

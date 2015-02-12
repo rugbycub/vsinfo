@@ -1,0 +1,55 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  airport_id: MyString
+  baggage_overall_actual: 1.5
+  baggage_delayed_actual: 1.5
+  baggage_damaged_actual: 1.5
+  baggage_pilfered_actual: 1.5
+  xplane_checkin_actual: 1.5
+  xplane_boarding_actual: 1.5
+  door_opening_dot3_actual: 1.5
+  door_opening_dot5_actual: 1.5
+  otp_all_d0_actual: 1.5
+  otp_all_d15_actual: 1.5
+  otp_exc_d0_actual: 1.5
+  otp_exc_d15_actual: 1.5
+  baggage_overall_target: 1.5
+  baggage_delayed_target: 1.5
+  baggage_damaged_target: 1.5
+  baggage_pilfered_target: 1.5
+  xplane_checkin_target: 1.5
+  xplane_boarding_target: 1.5
+  door_opening_dot3_target: 1.5
+  door_opening_dot5_target: 1.5
+  otp_all_d0_target: 1.5
+  otp_all_d15_target: 1.5
+  otp_exc_d0_target: 1.5
+  otp_exc_d15_target: 1.5
+
+two:
+  airport_id: MyString
+  baggage_overall_actual: 1.5
+  baggage_delayed_actual: 1.5
+  baggage_damaged_actual: 1.5
+  baggage_pilfered_actual: 1.5
+  xplane_checkin_actual: 1.5
+  xplane_boarding_actual: 1.5
+  door_opening_dot3_actual: 1.5
+  door_opening_dot5_actual: 1.5
+  otp_all_d0_actual: 1.5
+  otp_all_d15_actual: 1.5
+  otp_exc_d0_actual: 1.5
+  otp_exc_d15_actual: 1.5
+  baggage_overall_target: 1.5
+  baggage_delayed_target: 1.5
+  baggage_damaged_target: 1.5
+  baggage_pilfered_target: 1.5
+  xplane_checkin_target: 1.5
+  xplane_boarding_target: 1.5
+  door_opening_dot3_target: 1.5
+  door_opening_dot5_target: 1.5
+  otp_all_d0_target: 1.5
+  otp_all_d15_target: 1.5
+  otp_exc_d0_target: 1.5
+  otp_exc_d15_target: 1.5

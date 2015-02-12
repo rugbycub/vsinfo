@@ -14,7 +14,7 @@ Dashing.scheduler.every '5m', first_in: 1.second.since, allow_overlapping: false
   description = forecast['weatherDesc'][0]['value']
   farenheit   = forecast['temp_F']
   code        = forecast['weatherCode']
-  Dashing.send_event('forecast', {
+  Dashing.send_event('forecast_lax', {
     farenheit: "#{farenheit}&deg;F",
     summary:   "#{description}",
     code:      "#{code}"

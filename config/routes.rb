@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'sessions/new'
 
   get    'login'   => 'sessions#new'
@@ -6,7 +7,7 @@ Rails.application.routes.draw do
   delete 'logout'  => 'sessions#destroy'
   resources :weekly_schedules
 
-  resources :employees
+
 
   resources :airports do
     resources :positions
@@ -20,6 +21,12 @@ Rails.application.routes.draw do
     resources :arrivals
     resources :airplanes
     resources :departures
+    resources :employees
+    resources :metrics
+    resources :tickers do 
+      post 'edit_individual', on: :collection 
+      put 'update_individual', on: :collection      
+    end
     resources :weekly_schedules do
         post 'edit_individual', on: :collection 
         put 'update_individual', on: :collection
@@ -28,7 +35,7 @@ Rails.application.routes.draw do
 
   mount Dashing::Engine, at: Dashing.config.engine_path
 
-  root to: "airports#index"
+  root to: "sessions#new"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

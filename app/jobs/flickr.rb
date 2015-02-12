@@ -7,8 +7,8 @@ flickr_id = '129372876@N04'
 Dashing.scheduler.every '1m', first_in: 1.second.since, allow_overlapping: false do |job|
   public_photos = photo_urls "public", flickr_id
   favourite_photos = photo_urls "faves", flickr_id
-  Dashing.send_event('flickr_public', photos: public_photos)
-  Dashing.send_event('flickr_faves', photos: favourite_photos)
+  Dashing.send_event('flickr_public_lax', photos: public_photos)
+  Dashing.send_event('flickr_faves_lax', photos: favourite_photos)
 end
  
 def photo_urls(type, flickr_id)

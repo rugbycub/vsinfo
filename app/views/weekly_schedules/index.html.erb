@@ -33,6 +33,7 @@
   </tbody>
 </table>
 <p><%= submit_tag "Edit Checked" %></p>
+<button><%= link_to 'back', airport_path(id: @current_airport.code) %></button>
 <% end %>
 
 <br>

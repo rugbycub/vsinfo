@@ -3,17 +3,17 @@
     </li>
     
     <li data-row="2" data-col="5" data-sizex="2" data-sizey="2">
-      <div data-id="baggage_overall" data-view="Number" data-title="Overall" data-moreinfo="per thousand"></div>
+      <div data-id="baggage_overall_<%= params[:city] %>" data-view="Number" data-title="Overall" data-moreinfo="per thousand"></div>
     </li>
 
     <li data-row="4" data-col="5" data-sizex="2" data-sizey="2">
-      <div data-id="baggage_delayed" data-view="Number" data-title="Delayed" data-moreinfo="per thousand"></div>
+      <div data-id="baggage_delayed_<%= params[:city] %>" data-view="Number" data-title="Delayed" data-moreinfo="per thousand"></div>
     </li>
 
     <li data-row="6" data-col="5" data-sizex="2" data-sizey="2">
-      <div data-id="baggage_damaged" data-view="Number" data-title="Damaged" data-moreinfo="per thousand"></div>
+      <div data-id="baggage_damaged_<%= params[:city] %>" data-view="Number" data-title="Damaged" data-moreinfo="per thousand"></div>
     </li>
 
     <li data-row="8" data-col="5" data-sizex="2" data-sizey="2">
-      <div data-id="baggage_delayed" data-view="Number" data-title="Pilfered" data-moreinfo="per thousand"></div>
+      <div data-id="baggage_pilfered_<%= params[:city] %>" data-view="Number" data-title="Pilfered" data-moreinfo="per thousand"></div>
     </li>

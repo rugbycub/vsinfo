@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
-
+<button><%= link_to 'Manage Staff Schedule', airport_weekly_schedules_path(airport_id: @airport.code) %></button>
+<button><%= link_to 'Manage Operations', airport_operations_path(airport_id: @airport.code) %> </button>
 <p>
   <strong>Code:</strong>
   <%= @airport.code %>
@@ -32,3 +33,5 @@
 
 <%= link_to 'Edit', edit_airport_path(@airport) %> |
 <%= link_to 'Back', airports_path %>
+
+
